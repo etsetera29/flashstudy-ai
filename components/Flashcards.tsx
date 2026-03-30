@@ -38,7 +38,7 @@ export default function Flashcards({ cards, onGoToQuiz }: FlashcardsProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [direction, setDirection] = useState<1 | -1>(1);
 
-  const allTopics = [...new Set(cards.map((c) => c.topic))];
+  const allTopics = Array.from(new Set(cards.map((c) => c.topic)));
   const current = deck[currentIndex];
 
   const goNext = useCallback(() => {
